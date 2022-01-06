@@ -4,15 +4,16 @@ import hmac
 import hashlib
 import requests
 import json
+from bitso_bot_keys import KEY, SECRET
 
 #PUT se utiliza para actualizar.
 #POST se utiliza para crear. 
 
-bitso_key = "okURfcpasT"
-bitso_secret = "e22a20b7312e4fcd24ce774395a974b1"
-http_method = "POST" # Change to POST if endpoint requires data
-#request_path = "/v3/balance/" 
-request_path = "/v3/orders/" 
+bitso_key = KEY
+bitso_secret = SECRET
+http_method = "GET" # Change to POST if endpoint requires data
+request_path = "/v3/balance/" 
+#request_path = "/v3/orders/" 
 #POST https://api.bitso.com/v3/orders/
 
 
