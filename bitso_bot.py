@@ -11,8 +11,10 @@ from bitso_bot_keys import KEY, SECRET
 
 bitso_key = KEY
 bitso_secret = SECRET
-http_method = "GET" # Change to POST if endpoint requires data
-request_path = "/v3/balance/" 
+#http_method = "GET" # Change to POST if endpoint requires data
+http_method = "DELETE"
+request_path = "/v3/orders/3TFYQMjzWmMYZwIM/" # delete
+#request_path = "/v3/balance/" 
 #request_path = "/v3/orders/" 
 #POST https://api.bitso.com/v3/orders/
 
@@ -36,5 +38,8 @@ if (http_method == "GET"):
   response = requests.get("https://api.bitso.com" + request_path, headers={"Authorization": auth_header})
 elif (http_method == "POST"):
   response = requests.post("https://api.bitso.com" + request_path, json = parameters, headers={"Authorization": auth_header})
+elif (http_method =="DELETE"):
+      response = requests.delete("https://api.bitso.com" + request_path, headers={"Authorization": auth_header})
+
 
 print(response.content)
